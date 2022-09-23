@@ -3,7 +3,7 @@ $(function() { // quando o documento estiver pronto/carregado
     // função para exibir pessoas na tabela
     function exibir_moedas() {
         $.ajax({
-            url: 'http://localhost:5000/listar_moedas',
+            url: 'http://172.17.99.244:5000/listar_moedas',
             method: 'GET',
             dataType: 'json', // os dados são recebidos no formato json
             success: listar, // chama a função listar para processar o resultado
@@ -60,7 +60,7 @@ $(function() { // quando o documento estiver pronto/carregado
         var dados = JSON.stringify({ nome: nome, ano: ano });
         // fazer requisição para o back-end
         $.ajax({
-            url: 'http://localhost:5000/incluir_moeda',
+            url: 'http://172.17.99.244:5000/incluir_moeda',
             type: 'POST',
             dataType: 'json', // os dados são recebidos no formato json
             contentType: 'application/json', // tipo dos dados enviados
@@ -107,7 +107,7 @@ $(function() { // quando o documento estiver pronto/carregado
         var id_moeda = componente_clicado.substring(nome_icone.length);
         // solicitar a exclusão da pessoa
         $.ajax({
-            url: 'http://localhost:5000/excluir_moeda/'+id_moeda,
+            url: 'http://172.17.99.244:5000/excluir_moeda/'+id_moeda,
             type: 'DELETE', // método da requisição
             dataType: 'json', // os dados são recebidos no formato json
             success: moedaExcluida, // chama a função listar para processar o resultado

@@ -1,32 +1,32 @@
 from config import *
-from modelo import Pessoa
+from modelo import Moeda
 
 @app.route("/")
 def inicio():
-    return 'Sistema de cadastro de pessoas. '+\
-        '<a href="/listar_pessoas">Operação listar</a>'
+    return 'Sistema de cadastro de moedas. '+\
+        '<a href="/listar_moedas">Operação listar</a>'
 
-@app.route("/listar_pessoas")
-def listar_pessoas():
-    # obter as pessoas do cadastro
-    pessoas = db.session.query(Pessoa).all()
-    # aplicar o método json que a classe Pessoa possui a cada elemento da lista
-    pessoas_em_json = [ x.json() for x in pessoas ]
+@app.route("/listar_moedas")
+def listar_moedas():
+    # obter as Moeda do cadastro
+    moedas = db.session.query(Moeda).all()
+    # aplicar o método json que a classe Moeda possui a cada elemento da lista
+    moedas_em_json = [ x.json() for x in moedas ]
     # converter a lista do python para json
-    resposta = jsonify(pessoas_em_json)
+    resposta = jsonify(moedas_em_json)
     # PERMITIR resposta para outras pedidos oriundos de outras tecnologias
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta # retornar...
 
-# teste da rota: curl -d '{"nome":"James Kirk", "telefone":"92212-1212", "email":"jakirk@gmail.com"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_pessoa
-@app.route("/incluir_pessoa", methods=['post'])
-def incluir_pessoa():
+# teste da rota: curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_moeda
+@app.route("/incluir_moeda", methods=['post'])
+def incluir_moeda():
     # preparar uma resposta otimista
-    resposta = jsonify({"resultado": "ok", "detalhes": "ok"})
-    # receber as informações da nova pessoa
+    resposta = jsonify({"resultado": "ok", "detalhes": "oi"})
+    # receber as informações da nva moeda
     dados = request.get_json() #(force=True) dispensa Content-Type na requisição
     try: # tentar executar a operação
-      nova = Pessoa(**dados) # criar a nova pessoa
+      nova = Moeda(**dados) # criar a nova pessoa
       db.session.add(nova) # adicionar no BD
       db.session.commit() # efetivar a operação de gravação
     except Exception as e: # em caso de erro...
@@ -36,14 +36,14 @@ def incluir_pessoa():
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta # responder!
 
-# teste: curl -X DELETE http://localhost:5000/excluir_pessoa/1
-@app.route("/excluir_pessoa/<int:pessoa_id>", methods=['DELETE'])
-def excluir_pessoa(pessoa_id):
+# teste: curl -X DELETE http://localhost:5000/excluir_moeda/1
+@app.route("/excluir_moeda/<int:moeda_id>", methods=['DELETE'])
+def excluir_moeda(moeda_id):
     # preparar uma resposta otimista
     resposta = jsonify({"resultado": "ok", "detalhes": "ok"})
     try:
         # excluir a pessoa do ID informado
-        Pessoa.query.filter(Pessoa.id == pessoa_id).delete()
+        Moeda.query.filter(Moeda.id == moeda_id).delete()
         # confirmar a exclusão
         db.session.commit()
     except Exception as e:
@@ -54,12 +54,13 @@ def excluir_pessoa(pessoa_id):
     return resposta # responder!
 
 ''' teste da exclusão:
-$ curl -X DELETE http://localhost:5000/excluir_pessoa/1
+$ curl -X DELETE http://localhost:5000/excluir_moeda/1
 {
   "detalhes": "ok", 
   "resultado": "ok"
 }
 '''
 
-app.run(debug=True)
+db.create_all()
+app.run(host="0.0.0.0", debug=True)
 

@@ -1,5 +1,5 @@
 from config import *
-from modelo import Moeda
+from back.modelos.moeda import Moeda
 
 @app.route("/")
 def inicio():
@@ -58,7 +58,7 @@ $ curl -X DELETE http://localhost:5000/excluir_moeda/1
 {
   "detalhes": "ok", 
   "resultado": "ok"
-}
+} 
 '''
 
 db.create_all()

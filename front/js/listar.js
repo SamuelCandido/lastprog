@@ -18,6 +18,8 @@ $(function () { // quando o documento estiver pronto/carregado
             lin = '<tr>' + // elabora linha com os dados da moedas
                 '<td>' + moedas[i].nome + '</td>' +
                 '<td>' + moedas[i].ano + '</td>' +
+                '<td>' + moedas[i].ano + '</td>' +
+                '<td><button class="btn btn-danger deletar-moeda" data-id-moeda="'+moedas[i].id+'"> Excluir </button></td>'
                 '</tr>';
             // adiciona a linha no corpo da tabela
             $('#corpoTabelaMoedas').append(lin);

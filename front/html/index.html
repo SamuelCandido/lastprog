@@ -33,8 +33,9 @@
 
   <div class="container">
 
-    <h1 class="">Bem vindo a sua galeria de moedas</h1>
-
+    <h1 class="">Bem vindo ao seu album</h1>
+    <br>
+    <h2> Moedas </h2>
     <table class="table">
       <thead>
         <tr>
@@ -48,13 +49,73 @@
     </table>
     
     <hr style="color:  gray;">
-
     <!-- Botão que faz descer o modal -->
     <button id="btAddCoin" type="button" class="btn btn-info" style="color: white;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
       Adicionar moeda
     </button>
-
+    <br>
+    <br>
     <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Cadastre sua moeda aqui</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            <form action="https://localhost:5000" onsubmit="return false;" enctype="multipart/form-data" id="meuform">
+              <div class="form-floating mb-4">
+                <input type="text" class="form-control form-control-lg" placeholder="Ex.: samuca@gmail.com" id="typeUserX-2"></input>
+                <label class="form-label" for="typeUserX-2">Nome da moeda</label>
+              </div>
+
+              <div class="form-floating mb-4">
+                <input type="text" class="form-control form-control-lg" placeholder="Ex.: C@rL0tA d!V" id="typeAnoX-2"></input>
+                <label class="form-label"  for="typeAnoX-2">Ano da moeda</label>
+              </div>
+
+
+              <div class="form-group">
+                <label>Foto da moeda</label>
+                <input class="form-control" type="file" name="foto" id="campoFoto">
+                <span id="nomearquivo"></span>
+              </div>
+              <br>    
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+            <button id="btIncluir" type="button" class="btn btn-info" style="color: white;">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <h2> Cedulas </h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nome da Cedula</th>
+          <th scope="col">Ano</th>
+          <th scope="col">Foto</th>
+        </tr>
+      </thead>
+      <tbody id="corpoTabelaCedula">
+      </tbody>
+    </table>
+    
+    <hr style="color:  gray;">
+
+    <!-- Botão que faz descer o modal -->
+    <button id="btAddMoney" type="button" class="btn btn-info" style="color: white;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      Adicionar Cedula
+    </button>
+
+    <!-- Modal- Vcs vao mudar tudo que tem moeda para cedula -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">

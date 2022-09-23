@@ -7,7 +7,7 @@ $(function(){
         let id_moeda = $(this).attr('data-id-moeda');
 
         $.ajax({
-            url: 'http://172.17.99.244:5000/excluir_moeda/'+ id_moeda,
+            url: 'http://localhost:5000/excluir_moeda/'+ id_moeda,
             type: 'DELETE',
             success: moedaExcluida, // chama a função listar para processar o resultado
             error: erroAoExcluir

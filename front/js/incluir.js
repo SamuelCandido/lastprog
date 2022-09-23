@@ -9,7 +9,7 @@ $(function() { // quando o documento estiver pronto/carregado
         var dados = JSON.stringify({ nome: nome, ano: ano});
         // fazer requisição para o back-end
         $.ajax({
-            url: 'http://172.17.99.244:5000/incluir_moeda',
+            url: 'http://localhost:5000/incluir_moeda',
             type: 'POST',
             dataType: 'json', // os dados são recebidos no formato json
             contentType: 'application/json', // tipo dos dados enviados

@@ -2,7 +2,7 @@ $(function () { // quando o documento estiver pronto/carregado
 
     // chamada ao backend
     $.ajax({
-        url: 'http://172.17.99.244:5000/listar_moedas', // lembrar de trocar a url
+        url: 'http://localhost:5000/listar_moedas', // lembrar de trocar a url
         method: 'GET',
         dataType: 'json', // os dados são recebidos no formato json
         success: listar, // chama a função listar para processar o resultado

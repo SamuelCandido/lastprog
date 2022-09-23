@@ -16,10 +16,12 @@ $(function(){
             if (retorno.resultado == "ok") { // a operação deu certo?
                 // informar resultado de sucesso
                 alert("Moeda Excluída com sucesso!");
+                window.location.reload()
                 //$("#mensagem").text("Moeda excluída com sucesso!");
-                // limpar os campos
-                $("#typeUserX-2").val("");
-                $("#typeAnoX-2").val("");
+                // // limpar os campos
+                // $("#typeUserX-2").val("");
+                // $("#typeAnoX-2").val("");
+                // $('#corpoTabelaMoedas').remove(lin);
             } else {
                 // informar mensagem de erro
                 alert("ERRO na exclusão: "+retorno.resultado + ":" + retorno.detalhes);

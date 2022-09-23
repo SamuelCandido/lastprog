@@ -22,9 +22,10 @@ $(function() { // quando o documento estiver pronto/carregado
                 // informar resultado de sucesso
                 alert("Moeda incluída com sucesso!");
                 //$("#mensagem").text("Pessoa incluída com sucesso!");
+                window.location.reload()
                 // limpar os campos
-                $("#typeUserX-2").val("");
-                $("#typeAnoX-2").val("");
+                // $("#typeUserX-2").val("");
+                // $("#typeAnoX-2").val("");
             } else {
                 // informar mensagem de erro
                 alert("ERRO na inclusão: "+retorno.resultado + ":" + retorno.detalhes);

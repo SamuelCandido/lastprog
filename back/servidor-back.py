@@ -1,5 +1,5 @@
 from config import *
-from back.modelos.moeda import Moeda
+from modelos.moeda import Moeda
 
 @app.route("/")
 def inicio():

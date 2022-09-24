@@ -1,0 +1,13 @@
+html {
+    height: 100%; /* Define o tamanho do Documento HTML */
+  }
+  
+body {
+    height: 100%;
+    margin: 0 auto; /* Centraliza */
+    margin-top: 0%;
+    padding: 100px;
+    padding-bottom: 30px;
+    padding-top: 0px;
+    width: 90%;
+}

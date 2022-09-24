@@ -26,75 +26,99 @@
     <script src="../js/incluir.js"></script>
     <script src="../js/listar.js"></script>
     <script src="../js/excluir.js"></script>
+    <style>
+        body{
+            background-color: #508bfc;
+        }
+        #teste{
+            height: 100%;
+            margin: 0 auto; /* Centraliza */
+            margin-top: 0%;
+            
+            padding-left: 50px !important;
+            padding-right: 60px !important;
+            padding-bottom: 30px;
+            padding-top: 0px;
+            width: 80%;
+            background-color: white;
+        }
+    </style>
 </head>
-<body>
-    <h1 style="text-align: center;">Bem vindo</h1>
-    <h2>
-        <span id="username" style="font-style:italic;"></span>
-    </h2>
+<body >
+    <div class="vh-100" id="teste">
+        <h1 style="text-align: center;">Bem vindo</h1>
+        <h2>
+            <span id="username" style="font-style:italic;"></span>
+        </h2>
 
-    <div class="row">
-        <div class="col">
-            <div class="card" style="width: 18rem; text-align: center;">
-                <div class="card-body">
-                    <h5 class="card-title">Euro</h5>
-                    <p class="card-text">Normais</p>
-                    <a onclick="location.href='album.html'" class="btn btn-primary">Entrar no álbum</a>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Euro</h5>
+                        <p class="card-text">Normal</p>
+                    </div>
+                    <div class="card-footer">
+                        <a style="" onclick="location.href='album.html'" class="btn btn-primary">Entrar no álbum</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Brasil</h5>
+                        <p class="card-text">Dinheiro com defeito</p>
+                    </div>
+                    <div class="card-footer">
+                        <a style="" onclick="location.href='album.html'" class="btn btn-primary">Entrar no álbum</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Brasil</h5>
+                        <p class="card-text">Dinheiro normal</p>
+                    </div>
+                    <div class="card-footer">
+                        <a style="" onclick="location.href='album.html'" class="btn btn-primary">Entrar no álbum</a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card" style="width: 18rem; text-align: center;">
-                <div class="card-body">
-                    <h5 class="card-title">Brasil</h5>
-                    <p class="card-text">Normais</p>
-                    <a onclick="location.href='album.html'" class="btn btn-primary">Entrar no álbum</a>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card" style="width: 18rem; text-align: center;">
-                <div class="card-body">
-                    <h5 class="card-title">Brasil</h5>
-                    <p class="card-text">Com falha</p>
-                    <a onclick="location.href='album.html'" class="btn btn-primary">Entrar no álbum</a>
-                </div>
-            </div>
-        </div>
-    </div>
+        
+        <br>
+
+        <!-- Botão que faz descer o modal -->
+        <button id="btAddMoney" type="button" class="btn btn-info" style="color: white;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Adicionar álbum a galeria
+        </button>
     
-    <br>
+        <!-- Modal- Vcs vao mudar tudo que tem moeda para cedula -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
 
-    <!-- Botão que faz descer o modal -->
-    <button id="btAddMoney" type="button" class="btn btn-info" style="color: white;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        Adicionar álbum a galeria
-    </button>
-  
-    <!-- Modal- Vcs vao mudar tudo que tem moeda para cedula -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Criando seu álbum</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
 
-        <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Criando seu álbum</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-
-        <div class="modal-body">
-            <form action="https://localhost:5000" onsubmit="return false;" enctype="multipart/form-data" id="meuform">
-            <div class="form-floating mb-4">
-                <input type="text" class="form-control form-control-lg" placeholder="Ex.: Brasil" id="nickalbum"></input>
-                <label class="form-label" for="nickalbum">Nome do pais do álbum</label>
+                    <div class="modal-body">
+                        <form action="https://localhost:5000" onsubmit="return false;" enctype="multipart/form-data" id="meuform">
+                            <div class="form-floating mb-4">
+                                <input type="text" class="form-control form-control-lg" placeholder="Ex.: Brasil" id="nickalbum"></input>
+                                <label class="form-label" for="nickalbum">Nome do pais do álbum</label>
+                            </div>
+                            <br>    
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                        <button id="btIncluir" type="button" class="btn btn-info" style="color: white;">Enviar</button>
+                    </div>
+                </div>
             </div>
-            <br>    
-            </form>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-            <button id="btIncluir" type="button" class="btn btn-info" style="color: white;">Enviar</button>
-        </div>
         </div>
     </div>
-    </div>
-  
 </body>

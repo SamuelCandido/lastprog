@@ -35,32 +35,66 @@
 
     <div class="row">
         <div class="col">
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem; text-align: center;">
                 <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title">Euro</h5>
+                    <p class="card-text">Normais</p>
+                    <a onclick="location.href='album.html'" class="btn btn-primary">Entrar no álbum</a>
                 </div>
             </div>
         </div>
         <div class="col">
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem; text-align: center;">
                 <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title">Brasil</h5>
+                    <p class="card-text">Normais</p>
+                    <a onclick="location.href='album.html'" class="btn btn-primary">Entrar no álbum</a>
                 </div>
             </div>
         </div>
         <div class="col">
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem; text-align: center;">
                 <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title">Brasil</h5>
+                    <p class="card-text">Com falha</p>
+                    <a onclick="location.href='album.html'" class="btn btn-primary">Entrar no álbum</a>
                 </div>
             </div>
         </div>
     </div>
-        
+    
+    <br>
+
+    <!-- Botão que faz descer o modal -->
+    <button id="btAddMoney" type="button" class="btn btn-info" style="color: white;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Adicionar álbum a galeria
+    </button>
+  
+    <!-- Modal- Vcs vao mudar tudo que tem moeda para cedula -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Criando seu álbum</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+            <form action="https://localhost:5000" onsubmit="return false;" enctype="multipart/form-data" id="meuform">
+            <div class="form-floating mb-4">
+                <input type="text" class="form-control form-control-lg" placeholder="Ex.: Brasil" id="nickalbum"></input>
+                <label class="form-label" for="nickalbum">Nome do pais do álbum</label>
+            </div>
+            <br>    
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+            <button id="btIncluir" type="button" class="btn btn-info" style="color: white;">Enviar</button>
+        </div>
+        </div>
+    </div>
+    </div>
+  
 </body>

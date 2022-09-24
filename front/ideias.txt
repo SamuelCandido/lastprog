@@ -8,7 +8,11 @@
 fixo como 0.1,e a cotação será um número aleatório por exemplo 10. 
 Então multiplica-se o valor fixo com o da cotação para ter o valor atual da moeda
 
-@Classe album, vai servir como uma carteira  
+@Classe album, vai servir como uma carteira. Quero que na pagina inicial o usuario veja 
+os albuns que ele vai adicionar na propria galeria no caso galeria vai receber albuns que vai 
+receber moedas/cedulas
 
 @Classe usuario, auto explicativo
+
+
 

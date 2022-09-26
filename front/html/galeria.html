@@ -26,6 +26,7 @@
     <script src="../js/incluir.js"></script>
     <script src="../js/listar.js"></script>
     <script src="../js/excluir.js"></script>
+    <script src="../js/addCard.js"></script>
     <style>
         body{
             background-color: #508bfc;
@@ -51,7 +52,7 @@
             <span id="username" style="font-style:italic;"></span>
         </h2>
         
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div id="listaAlbum" class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">
                 <div class="card h-100">
                     <div class="card-body">
@@ -107,15 +108,19 @@
                     <div class="modal-body">
                         <form action="https://localhost:5000" onsubmit="return false;" enctype="multipart/form-data" id="meuform">
                             <div class="form-floating mb-4">
-                                <input type="text" class="form-control form-control-lg" placeholder="Ex.: Brasil" id="nickalbum"></input>
-                                <label class="form-label" for="nickalbum">Nome do pais do álbum</label>
+                                <input id="tituloCard" type="text" class="form-control form-control-lg" placeholder="Ex.: Brasil"></input>
+                                <label class="form-label" for="tituloCard">Nome do pais do álbum</label>
+                            </div>
+                            <div class="form-floating mb-4">
+                                <input id="descricaoCard" type="text" class="form-control form-control-lg" placeholder="Ex.: Com defeito"></input>
+                                <label class="form-label" for="descricaoCard">Descreva sobre o dinheiro</label>
                             </div>
                             <br>    
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-                        <button id="btIncluir" type="button" class="btn btn-info" style="color: white;">Enviar</button>
+                        <button id="btIncluirCard" type="button" class="btn btn-info" style="color: white;">Enviar</button>
                     </div>
                 </div>
             </div>

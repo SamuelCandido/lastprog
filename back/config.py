@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app) # aplicar o cross domain
 # caminho do arquivo de banco de dados
 path = os.path.dirname(os.path.abspath(__file__)) 
-moedasbd = os.path.join(path, 'moedasdb.db')
+moedasbd = os.path.join(path, 'db.db')
 # sqlalchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///"+moedasbd
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # remover warnings

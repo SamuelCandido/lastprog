@@ -22,7 +22,7 @@ $(function() { // quando o documento estiver pronto/carregado
                 // informar resultado de sucesso
                 alert("Moeda incluída com sucesso!");
                 //$("#mensagem").text("Pessoa incluída com sucesso!");
-                window.location.reload()
+                window.location.reload();
                 // limpar os campos
                 // $("#typeUserX-2").val("");
                 // $("#typeAnoX-2").val("");

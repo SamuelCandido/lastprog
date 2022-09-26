@@ -6,7 +6,7 @@ class Moeda(db.Model):
     nome = db.Column(db.String(254))
     ano = db.Column(db.String(254))
 
-    # método para expressar a pessoa em forma de texto
+    # método para expressar a moeda em forma de texto
     def __str__(self):
         return str(self.id)+") "+ self.nome + ", " +\
             self.ano 

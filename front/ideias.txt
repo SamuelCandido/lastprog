@@ -14,5 +14,6 @@ receber moedas/cedulas
 
 @Classe usuario, auto explicativo
 
+album herda dinheiro herança
 
 

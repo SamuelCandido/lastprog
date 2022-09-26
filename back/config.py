@@ -17,3 +17,4 @@ app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///"+albunsbd
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///"+moedasbd
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # remover warnings
 db = SQLAlchemy(app)
+

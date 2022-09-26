@@ -30,7 +30,7 @@ $(function(){
         function albumIncluido (retorno) {
             if (retorno.resultado == "ok") { // a operação deu certo?
                 // informar resultado de sucesso
-                alert("Album incluída com sucesso!");
+                alert("Album incluído com sucesso!");
                 //$("#mensagem").text("Pessoa incluída com sucesso!");
                 window.location.reload();
                 // limpar os campos
@@ -53,7 +53,45 @@ $(function(){
         // incluir card
     });
         
-})
+});
+
+$(function(){
+    $(document).on("click", "#xClose", function() {
+
+        // $(this) pega o botao que foi 
+        // .attr('data-id-moeda') pega o atributo
+        // data-(alguma coisa) é usado para atributos com nomes customizados
+        let id_album = $(this).attr('data-album');
+        console.log(id_album)
+        $.ajax({
+            url: 'http://localhost:5000/excluir_album/'+ id_album,
+            type: 'DELETE',
+            success: albumExcluido, // chama a função listar para processar o resultado
+            error: erroAoExcluir
+        });
+        function albumExcluido (retorno) {
+            if (retorno.resultado == "ok") { // a operação deu certo?
+                // informar resultado de sucesso
+                alert("Album excluído com sucesso!");
+                window.location.reload()
+                //$("#mensagem").text("Moeda excluída com sucesso!");
+                // // limpar os campos
+                // $("#typeUserX-2").val("");
+                // $("#typeAnoX-2").val("");
+                // $('#corpoTabelaMoedas').remove(lin);
+            } 
+            else {
+                // informar mensagem de erro
+                alert("ERRO na exclusão: "+retorno.resultado + ":" + retorno.detalhes);
+            }            
+        };
+        function erroAoExcluir (retorno) {
+            // informar mensagem de erro
+            alert("ERRO ao contactar back-end: "+retorno.resultado + ":" + retorno.detalhes);
+        };
+    });
+});
+
 
 function listar(data) {
     console.log(data)
@@ -64,6 +102,7 @@ function listar(data) {
             <div class="col">
                 <div class="card h-100">
                     <div class="card-body">
+                    <button id="xClose" type="button" class="btn-close btn-close-black float-end" aria-label="Close" data-album="${card.id}"></button>
                         <h5 class="card-title">${title}</h5>
                         <p class="card-text">${descricao}</p>
                     </div>
@@ -73,5 +112,5 @@ function listar(data) {
                 </div>
             </div>
         `);
-    }
+    };
 };

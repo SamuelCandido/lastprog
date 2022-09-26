@@ -24,7 +24,7 @@ $(function () { // quando o documento estiver pronto/carregado
             // adiciona a linha no corpo da tabela
             $('#corpoTabelaMoedas').append(lin);
             
-        }
-    }
+        };
+    };
 
 });

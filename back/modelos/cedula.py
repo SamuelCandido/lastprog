@@ -3,8 +3,8 @@ from config import *
 class Cedula(db.Model):
     # atributos da moeda
     id = db.Column(db.Integer, primary_key=True)
-    nome = db.Column(db.String(254))
-    ano = db.Column(db.String(254))
+    nome = db.Column(db.String(254), nullable=False)
+    ano = db.Column(db.String(254), nullable=False)
 
     # método para expressar a pessoa em forma de texto
     def __str__(self):

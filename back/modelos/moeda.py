@@ -3,10 +3,10 @@ from config import *
 class Moeda(db.Model):
     # atributos da moeda
     id = db.Column(db.Integer, primary_key=True)
-    nome = db.Column(db.String(254))
-    ano = db.Column(db.String(254))
+    nome = db.Column(db.String(254), nullable=False)
+    ano = db.Column(db.String(254), nullable=False)
 
-    # método para expressar a moeda em forma de texto
+    # método para expressar a moeda em forma de texto j
     def __str__(self):
         return str(self.id)+") "+ self.nome + ", " +\
             self.ano 

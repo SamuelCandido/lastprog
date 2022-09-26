@@ -5,8 +5,8 @@ from modelos.cedula import *
 class Album(db.Model):
     # atributos do album
     id = db.Column(db.Integer, primary_key=True)
-    nome = db.Column(db.String(254))
-    decricao = db.Column(db.String(254))
+    nome = db.Column(db.String(254), nullable=True)
+    descricao = db.Column(db.String(254), nullable=True)
 
     # método para expressar a moeda em forma de texto
     def __str__(self):

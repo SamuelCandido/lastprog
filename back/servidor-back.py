@@ -8,9 +8,9 @@ def listar_albuns():
     # obter as Moeda do cadastro
     albums = db.session.query(Album).all()
     # aplicar o método json que a classe Moeda possui a cada elemento da lista
-    album_em_json = [ x.json() for x in album ]
+    albums_em_json = [ x.json() for x in albums ]
     # converter a lista do python para json
-    resposta = jsonify(albumS_em_json)
+    resposta = jsonify(albums_em_json)
     # PERMITIR resposta para outras pedidos oriundos de outras tecnologias
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta # retornar...
@@ -22,6 +22,8 @@ def incluir_album():
     resposta = jsonify({"resultado": "ok", "detalhes": "oi"})
     # receber as informações da nova moeda
     dados = request.get_json() #(force=True) dispensa Content-Type na requisição
+    if dados["nome"] == "": 
+        return jsonify({"resultado":"erro", "detalhes":"Nome não pode ser vazio"})
     try: # tentar executar a operação
       nova = Album(**dados) # criar a nova pessoa
       db.session.add(nova) # adicionar no BD
@@ -40,7 +42,7 @@ def excluir_album(album_id):
     resposta = jsonify({"resultado": "ok", "detalhes": "ok"})
     try:
         # excluir a pessoa do ID informado
-        Album.query.filter(Album.id == albu,_id).delete()
+        Album.query.filter(Album.id == album_id).delete()
         # confirmar a exclusão
         db.session.commit()
     except Exception as e:

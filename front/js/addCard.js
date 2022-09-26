@@ -1,4 +1,15 @@
 $(function(){
+
+    $.ajax({
+        url: 'http://localhost:5000/listar_albuns', // lembrar de trocar a url
+        method: 'GET',
+        dataType: 'json', // os dados são recebidos no formato json
+        success: listar, // chama a função listar para processar o resultado
+        error: function () {
+            alert("erro ao ler dados, verifique o backend");
+        }
+    });
+
     //incluir album
     $("#btIncluirCard").click(function() {
         //pegar dados da tela
@@ -34,28 +45,33 @@ $(function(){
             // informar mensagem de erro
             alert("ERRO ao contactar back-end: "+retorno.resultado + ":" + retorno.detalhes);
         }
-
+    });
         // listar album
-        $("#btIncluirCard").click(function(){
-            var title = $("#tituloCard").val();
-            var description = $("#descricaoCard").val();
-            
-            window.location.reload();
-            
-    
-            $("#listaAlbum").append(`
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">${title}</h5>
-                            <p class="card-text">${description}</p>
-                        </div>
-                        <div class="card-footer">
-                            <a onclick="location.href='album.html'" class="btn btn-primary">Entrar no álbum</a>
-                        </div>
+        
+    $("#btIncluirCard").click(function(){
+
+        // incluir card
+    });
+        
+})
+
+function listar(data) {
+    console.log(data)
+    for (let card of data) {
+        let title =card["nome"];
+        let descricao = card["descricao"];
+        $("#listaAlbum").append(`
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">${title}</h5>
+                        <p class="card-text">${descricao}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a onclick="location.href='album.html'" class="btn btn-primary">Entrar no álbum</a>
                     </div>
                 </div>
-            `);
-        });
-    })
-})
+            </div>
+        `);
+    }
+};

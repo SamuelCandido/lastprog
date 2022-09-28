@@ -25,8 +25,8 @@ class Usuario(db.Model):
 # teste    
 if __name__ == "__main__":
     # apagar o arquivo, se houver
-    if os.path.exists(usuariosbd):
-        os.remove(usuariosbd)
+    if os.path.exists(db.db):
+        os.remove(db.db)
 
     # criar tabelas
     db.create_all()

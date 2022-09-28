@@ -1,4 +1,4 @@
-from config import *
+from config.config import *
 from modelos.moeda import *
 from modelos.cedula import *
 
@@ -19,3 +19,28 @@ class Album(db.Model):
             "nome": self.nome,
             "descricao": self.descricao,
         }
+
+
+# teste    
+if __name__ == "__main__":
+    # apagar o arquivo, se houver
+    if os.path.exists(bd):
+        os.remove(albumbd)
+
+    # criar tabelas
+    db.create_all()
+
+    # teste da classe usuario
+    a1 = Album(nome = "Teste1", descricao = "blablabla")
+    a2 = Album(nome = "Teste2", descricao = "pipipi")
+    
+    # persistir
+    db.session.add(a1)
+    db.session.add(a2)
+    db.session.commit()
+    
+    # exibir a usuario
+    print(a2)
+
+    # exibir a usuario no format json
+    print(a2.json())

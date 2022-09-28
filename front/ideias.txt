@@ -4,7 +4,7 @@
 
 @Classe cambio, serve para ver por exemplo 5 reais brasileiro custa 1 dolar americano
 
-@Classe cotação, ver o quanto uma moeda valorização, por exemplo cada moeda terá um valor decimal 
+@Classe cotação, ver o quanto uma moeda valorizou, por exemplo cada moeda terá um valor decimal 
 fixo como 0.1,e a cotação será um número aleatório por exemplo 10. 
 Então multiplica-se o valor fixo com o da cotação para ter o valor atual da moeda
 
@@ -12,7 +12,7 @@ Então multiplica-se o valor fixo com o da cotação para ter o valor atual da m
 os albuns que ele vai adicionar na propria galeria no caso galeria vai receber albuns que vai 
 receber moedas/cedulas
 
-@Classe usuario, auto explicativo
+@Classe usuario, auto explicativo, já ta pronta
 
 album herda dinheiro herança
 

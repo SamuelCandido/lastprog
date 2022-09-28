@@ -1,7 +1,7 @@
 from config.config import *
 
 class Moeda(db.Model):
-    # atributos da moeda
+    # atributos do usuario
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(254), nullable=False)
     ano = db.Column(db.String(254), nullable=False)

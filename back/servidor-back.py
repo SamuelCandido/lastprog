@@ -1,9 +1,10 @@
-from config import *
+from config.config import *
 from modelos.moeda import Moeda
 from modelos.cedula import Cedula
 from modelos.album import Album
 
 @app.route("/listar_albuns")
+@jwt_required()
 def listar_albuns():
     # obter as Moeda do cadastro
     albums = db.session.query(Album).all()
@@ -17,6 +18,7 @@ def listar_albuns():
 
 # teste da rota: curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_moeda
 @app.route("/incluir_album", methods=['post'])
+@jwt_required()
 def incluir_album():
     # preparar uma resposta otimista
     resposta = jsonify({"resultado": "ok", "detalhes": "oi"})
@@ -37,6 +39,7 @@ def incluir_album():
 
 # teste: curl -X DELETE http://localhost:5000/excluir_moeda/1
 @app.route("/excluir_album/<int:album_id>", methods=['DELETE'])
+@jwt_required()
 def excluir_album(album_id):
     # preparar uma resposta otimista
     resposta = jsonify({"resultado": "ok", "detalhes": "ok"})
@@ -55,6 +58,7 @@ def excluir_album(album_id):
 
 #trocar moedas para cedula
 '''@app.route("/listar_cedulas")
+@jwt_required()
 def listar_moedas():
     # obter as Moeda do cadastro
     moedas = db.session.query(Moeda).all()
@@ -68,6 +72,7 @@ def listar_moedas():
 
 # teste da rota: curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_moeda
 @app.route("/incluir_moeda", methods=['post'])
+@jwt_required()
 def incluir_moeda():
     # preparar uma resposta otimista
     resposta = jsonify({"resultado": "ok", "detalhes": "oi"})
@@ -86,6 +91,7 @@ def incluir_moeda():
 
 # teste: curl -X DELETE http://localhost:5000/excluir_moeda/1
 @app.route("/excluir_moeda/<int:moeda_id>", methods=['DELETE'])
+@jwt_required()
 def excluir_moeda(moeda_id):
     # preparar uma resposta otimista
     resposta = jsonify({"resultado": "ok", "detalhes": "ok"})
@@ -106,6 +112,7 @@ def excluir_moeda(moeda_id):
 
 
 @app.route("/listar_moedas")
+@jwt_required()
 def listar_moedas():
     # obter as Moeda do cadastro
     moedas = db.session.query(Moeda).all()
@@ -119,6 +126,7 @@ def listar_moedas():
 
 # teste da rota: curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_moeda
 @app.route("/incluir_moeda", methods=['post'])
+@jwt_required()
 def incluir_moeda():
     # preparar uma resposta otimista
     resposta = jsonify({"resultado": "ok", "detalhes": "oi"})
@@ -137,6 +145,7 @@ def incluir_moeda():
 
 # teste: curl -X DELETE http://localhost:5000/excluir_moeda/1
 @app.route("/excluir_moeda/<int:moeda_id>", methods=['DELETE'])
+@jwt_required()
 def excluir_moeda(moeda_id):
     # preparar uma resposta otimista
     resposta = jsonify({"resultado": "ok", "detalhes": "ok"})

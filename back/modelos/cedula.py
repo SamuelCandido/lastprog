@@ -1,4 +1,4 @@
-from config import *
+from back.config.config import *
 
 class Cedula(db.Model):
     # atributos da moeda

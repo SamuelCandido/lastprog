@@ -56,7 +56,7 @@ def excluir_album(album_id):
     return resposta # responder!
 
 
-#trocar moedas para cedula
+#trocar moedas por cedula
 '''@app.route("/listar_cedulas")
 @jwt_required()
 def listar_moedas():

@@ -4,7 +4,7 @@ class Moeda(db.Model):
     # atributos do usuario
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(254), nullable=False)
-    ano = db.Column(db.String(254), nullable=False)
+    ano = db.Column(db.String(254))
 
     # método para expressar a moeda em forma de texto j
     def __str__(self):
@@ -17,27 +17,3 @@ class Moeda(db.Model):
             "nome": self.nome,
             "ano": self.ano,
         }
-
-# teste    
-if __name__ == "__main__":
-    # apagar o arquivo, se houver
-    if os.path.exists(moedasbd):
-        os.remove(moedasbd)
-
-    # criar tabelas
-    db.create_all()
-
-    # teste da classe Pessoa
-    m1 = Moeda(nome = "Euro", ano = "2002")
-    m2 = Moeda(nome = "Dolar", ano = "1980")      
-    
-    # persistir
-    db.session.add(m1)
-    db.session.add(m2)
-    db.session.commit()
-    
-    # exibir a pessoa
-    print(m2)
-
-    # exibir a pessoa no format json
-    print(m2.json())

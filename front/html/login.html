@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
 
+    <script src="../js/login.js"></script>
 
 </head>
 <body>
@@ -24,18 +25,18 @@
                     <h3 class="mb-5">Login</h3>
       
                     <div class="form-floating mb-4">
-                        <input type="email" class="form-control form-control-lg" placeholder="Ex.: samuca@gmail.com" id="typeEmailX-2"></input>
-                        <label class="form-label" for="typeEmailX-2">E-mail</label>
+                        <input type="email" class="form-control form-control-lg" placeholder="Ex.: samuca@gmail.com" id="campoEmail"></input>
+                        <label class="form-label" for="campoEmail">E-mail</label>
                     </div>
 
                     <div class="form-floating mb-4">
-                        <input type="password" class="form-control form-control-lg" placeholder="Ex.: C@rL0tA d!V" id="typePasswordX-2"></input>
-                        <label class="form-label"  for="floatingTextarea2">Senha</label>
+                        <input type="password" class="form-control form-control-lg" placeholder="Ex.: C@rL0tA d!V" id="campoSenha"></input>
+                        <label class="form-label"  for="campoSenha"  minlength="8" required>Senha</label>
                     </div>
                     <p class="small fw-bold mt-2 pt-1 mb-0">Ainda não tem conta? <a href="cadastro.html"
                         class="link-primary">Cadastre-se</a></p>
                     <br>
-                    <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+                    <button id="btLogar" class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
 
                 </div>
             </div>

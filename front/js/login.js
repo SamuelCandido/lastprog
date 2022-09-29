@@ -58,17 +58,6 @@ $(function () { // quando o documento estiver pronto/carregado
             error: () => {
                 alert("Não foi possível fazer login.")
             }
-        })
-        
-        if (email == $("#emailCad").val() && senha == $("#senhaCad").val()) {
-            // guarda na sessao
-            sessionStorage.setItem('login', login);
-
-            // encaminha para a página principal
-            window.location = '../html/galeria.html';
-        } else {
-            alert("Ae fizeste algo errado, tenta denovo");
-        }        
+        })  
     });   
-
 });

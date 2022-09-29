@@ -1,0 +1,41 @@
+@startuml
+
+title Relationships - Class Diagram
+
+class Usuario {
+  Int id
+  String email
+  String senha
+  
+}
+
+class Album {
+  Int id
+  String nome
+  String descricao
+  Int usuario_id
+}
+
+class Dinheiro {
+  Int id
+  String nome
+  Int ano
+  Int album_id
+  String nome_arquivo
+}
+
+class Cedula {
+}
+class Moeda {
+}
+
+Usuario *-- Album
+Album *-- Dinheiro
+
+Dinheiro <|-- Cedula
+Dinheiro <|-- Moeda
+
+
+
+
+@enduml

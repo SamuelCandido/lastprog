@@ -2,6 +2,48 @@ ____________________
 ## Tarefas commum ##
 ____________________
 
-1- Seis classes 
-2-  Crud
+1- Seis classes - Completo
+
+2- Crud - Completa
+
 3- Dados: data, int, text
+
+4- Upload de img - Em desenvolvimento
+
+5- Rodar no BD e fazer testes - completo mas a desenvolver
+
+6- Deve haver estes campos para login: 
+senha e papel (comum ou privilegiado) - (N entendi isso ainda)
+
+
+7- Guardar a quantidade de moedas/cedulas de um album 
+para fazer um grafico -  Apenas a ideia
+
+8- Poder adicionar, excluir e editar - Temos adicionar e excluir
+
+9- JWT - Ta dando erro
+
+10- Lista suspensa (drop) com algum tipo de botão 
+para mandar fazer o grafico, logo ficar escondido - apenas a ideia 
+
+11- Publicar no pythonanywhere
+
+__________________________________________________________________________________________________
+
+____________________
+## Tarefas premium ##
+____________________
+
+1- Embelezar a pagina
+
+2- 
+
+3-
+
+4-
+
+5-
+
+6-
+
+7-

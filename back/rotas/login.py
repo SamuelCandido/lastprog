@@ -6,7 +6,7 @@ from modelos.usuario import *
 def login():
 
     dados = request.get_json(force=True)  
-    login = dados['login']
+    email = dados['email']
     senha = dados['senha']
     
     encontrado = Pessoa.query.filter_by(email=login, senha=cifrar(senha)).first()

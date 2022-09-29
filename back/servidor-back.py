@@ -7,7 +7,6 @@ def inicio():
         '<a href="/listar_moedas">Operação listar</a>'
 
 @app.route("/listar_moedas")
-@jwt_required()
 def listar_moedas():
     # obter as Moeda do cadastro
     moedas = db.session.query(Moeda).all()
@@ -21,7 +20,6 @@ def listar_moedas():
 
 # teste da rota: curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_moeda
 @app.route("/incluir_moeda", methods=['post'])
-@jwt_required()
 def incluir_moeda():
     # preparar uma resposta otimista
     resposta = jsonify({"resultado": "ok", "detalhes": "oi"})

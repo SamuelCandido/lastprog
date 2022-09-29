@@ -9,7 +9,4 @@ def cifrar(senha):
     return h.hexdigest()
 
 def valida_senha(cifrado, senha_fornecida):
-    fornecida = cifrar(senha_fornecida)
-    if cifrado == fornecida:
-         return True
-    return False
+    return cifrado == cifrar(senha_fornecida)

@@ -1,4 +1,4 @@
-from config import *
+from config.config import *
 from modelos.moeda import Moeda
 
 @app.route("/")

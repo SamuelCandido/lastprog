@@ -28,6 +28,8 @@ para mandar fazer o grafico, logo ficar escondido - apenas a ideia
 
 11- Publicar no pythonanywhere
 
+12- Definir o mapeamento de classe "args e polimorfia" 
+
 __________________________________________________________________________________________________
 
 ____________________

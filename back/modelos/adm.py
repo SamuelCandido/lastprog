@@ -21,4 +21,26 @@ class Adm(db.Model):
             "senha": self.senha,
         }
 
+# teste    
+if __name__ == "__main__":
+    # apagar o arquivo, se houver
+    if os.path.exists(db.db):
+        os.remove(db.db)
 
+    # criar tabelas
+    db.create_all()
+
+    # teste da classe Adm
+    ad1 = Adm(nAdm = "Maria", email = "maria@gmail.com", senha = "123")
+    ad2 = Adm(nAdm = "Joao", email = "joao@gmail.com", senha = "456")      
+
+    # persistir
+    db.session.add(ad1)
+    db.session.add(ad2)
+    db.session.commit()
+
+    # exibir a Adm
+    print(ad2)
+
+    # exibir a Adm no format json
+    print(ad2.json())

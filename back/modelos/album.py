@@ -19,3 +19,27 @@ class Album(db.Model):
             "nome": self.nome,
             "descricao": self.descricao,
         }
+
+# teste    
+if __name__ == "__main__":
+    # apagar o arquivo, se houver
+    if os.path.exists(db.db):
+        os.remove(db.db)
+
+    # criar tabelas
+    db.create_all()
+
+    # teste da classe Album
+    a1 = Album(nAlbum = "Euro", descricao = "blabla")
+    a2 = Album(nAlbum = "Dolar", descricao = "crucru")      
+
+    # persistir
+    db.session.add(a1)
+    db.session.add(a2)
+    db.session.commit()
+
+    # exibir a Album
+    print(a2)
+
+    # exibir a Album no format json
+    print(a2.json())

@@ -1,28 +1,19 @@
 from config.config import *
-
-class Dinheiro(db.Model):
-    # atributos da Cedula
-    id = db.Column(db.Integer, primary_key=True)
-    nome = db.Column(db.String(254), nullable=False)
-    ano = db.Column(db.String(254))
-    valor = db.Column(db.Float)
-
-    # método para expressar a pessoa em forma de texto
-    def __str__(self):
-        return str(self.id)+") "+ self.nome + ", " +\
-            self.ano + ", " + self.valor
-    # expressao da classe no formato json
-    def json(self):
-        return {
-            "id": self.id,
-            "nome": self.nome,
-            "ano": self.ano,
-            "valor": self.valor,
-        }
-
+from dinheiro import Dinheiro
 
 class Cedula(Dinheiro):
-    pass
+    # estabelecer vínculo com a tabela-pai. Este campo define
+    # a criação da tabela cedula
+    id = db.Column(db.Integer, db.ForeignKey('dinheiro.id'), primary_key=True)
+
+    # a identidade polimórfica da classe será armazenada 
+    # no campo type da classe pai
+    __mapper_args__ = { 
+        'polymorphic_identity':'cedula',
+    }
+    conservacao = db.Column(db.Float) # atributo da cedula
+    def __str__(self):
+        return super().__str__() + f", conservacao={self.conservacao}"
 
 # teste    
 if __name__ == "__main__":
@@ -34,8 +25,8 @@ if __name__ == "__main__":
     db.create_all()
 
     # teste da classe Cedula
-    c1 = Cedula(nCedula = "Euro", ano = "2002", valor = "50")
-    c2 = Cedula(nCedula = "Dolar", ano = "1980", valor = "100")      
+    c1 = Cedula(nCedula = "Euro", ano = "2002", valor = "50", conservacao = "ótimo") 
+    c2 = Cedula(nCedula = "Dolar", ano = "1980", valor = "100", conservacao = "ruim")      
 
     # persistir
     db.session.add(c1)

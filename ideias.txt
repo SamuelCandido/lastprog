@@ -14,7 +14,7 @@ receber moedas/cedulas
 
 @Classe usuario, auto explicativo, já ta pronta
 
-album herda dinheiro herança
-
+Extenções para auxiliar
 
 pylens
+unnit

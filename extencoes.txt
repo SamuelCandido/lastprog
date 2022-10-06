@@ -1,0 +1,5 @@
+Para melhorar a experiencia dos programadores
+
+Pylance
+Pylans
+SQLite

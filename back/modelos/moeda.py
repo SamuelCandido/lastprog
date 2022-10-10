@@ -1,5 +1,5 @@
 from config.config import *
-from dinheiro import Dinheiro
+from modelos.dinheiro import Dinheiro
 
 class Moeda(Dinheiro):
     # estabelecer vínculo com a tabela-pai. Este campo define

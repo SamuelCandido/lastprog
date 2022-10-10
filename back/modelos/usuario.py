@@ -1,4 +1,4 @@
-from config.config import *
+from back.config.config import *
 
 class Usuario(db.Model):
     # atributos da usuario

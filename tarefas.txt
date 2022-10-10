@@ -4,16 +4,16 @@ ____________________
 
 1- Seis classes - Completo
 
-2- Crud - Completa
+2- Crud - Falta botar a update
 
-3- Dados: data, int, text
+3- Dados: data, int, text - Completa
 
 4- Upload de img - Em desenvolvimento
 
 5- Rodar no BD e fazer testes - completo mas a desenvolver
 
 6- Deve haver estes campos para login: 
-senha e papel (comum ou privilegiado) - (N entendi isso ainda)
+senha e papel (comum ou privilegiado) - Só colocar um papel especial para usuario
 
 
 7- Guardar a quantidade de moedas/cedulas de um album 

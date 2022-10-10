@@ -9,7 +9,7 @@ def login():
     email = dados['email']
     senha = dados['senha']
     
-    encontrado = Pessoa.query.filter_by(email=email, senha=cifrar(senha)).first()
+    encontrado = Usuario.query.filter_by(email=email, senha=cifrar(senha)).first()
 
     if encontrado is None: 
         resposta = jsonify({"resultado": "erro", "detalhes":"usuario ou senha incorreto(s)"})

@@ -10,7 +10,7 @@ def cadastro():
     email = dados['email']
     senha = dados['senha']
 
-    encontrado = Pessoa.query.filter_by(email=email, senha=cifrar(senha)).first()
+    encontrado = Usuario.query.filter_by(email=email, senha=cifrar(senha)).first()
     
     if encontrado != None: 
         resposta = jsonify({"resultado": "erro", "detalhes":" Usuario já existente"})

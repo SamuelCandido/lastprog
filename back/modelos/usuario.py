@@ -1,4 +1,4 @@
-from back.config.config import *
+from config.config import *
 
 class Usuario(db.Model):
     # atributos da usuario
@@ -9,8 +9,8 @@ class Usuario(db.Model):
 
     # método para expressar a usuario em forma de texto
     def __str__(self):
-        return f'{self.nome} [id={str(self.id)}], ' +\
-               f'{self.email}, {self.senha}'
+        return str(self.id)+") "+ self.nome + ", " +\
+            self.email + ", " + self.senha
 
     # expressao da classe no formato json
     def json(self):

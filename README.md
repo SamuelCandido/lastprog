@@ -8,7 +8,7 @@ python3 -m unittest discover -s ./tests/ -p "test_*.py" (RODAR DENTRO DE BACK)
 # Documentação API
 
 **/**
-Rota padrão, deve retornar o link do github: [Link do repositorio](https://github.com/SamuelCandido/lastprog)
+- Rota padrão, deve retornar o link do github: [Link do repositorio](https://github.com/SamuelCandido/lastprog)
 
 **/listar_moeda**
 - Vai listar as moedas em json
@@ -38,7 +38,10 @@ Rota padrão, deve retornar o link do github: [Link do repositorio](https://gith
 
 **/excluir_moeda**
 - Ao excluir, deve retornar: "resultado": "ok", "detalhes": "Moeda excluida com sucesso"
+
 **/excluir_cedula**
 - Ao excluir, deve retornar: "resultado": "ok", "detalhes": "Cedula excluida com sucesso"
+
 **/excluir_album**
 - Ao excluir, deve retornar: "resultado": "ok", "detalhes": "Album excluido com sucesso"
+

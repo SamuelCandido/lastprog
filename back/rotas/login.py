@@ -6,6 +6,8 @@ from modelos.usuario import *
 def login():
 
     dados = request.get_json(force=True)  
+    if dados["email"] == "" or dados["senha"] == "": 
+        return jsonify({"resultado":"erro", "detalhes":"Nome de usuario não pode ser vazio"})
     email = dados['email']
     senha = dados['senha']
     

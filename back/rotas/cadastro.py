@@ -7,6 +7,8 @@ from modelos.usuario import *
 def cadastro():
     
     dados = request.get.json(force=True)
+    if dados["nome"] == "" or dados["email"] == "" or dados["senha"] == "": 
+        return jsonify({"resultado":"erro", "detalhes":"Nome de usuario não pode ser vazio"})
     email = dados['email']
     senha = dados['senha']
 

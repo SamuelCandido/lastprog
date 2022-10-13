@@ -6,13 +6,13 @@ from modelos.album import Album
 
 class TestAlbum(unittest.TestCase):
     def test_coin(self):
-        a1 = Album(nome="TesteDeAlbum", ano="Foi?")
+        a1 = Album(nome="TesteDeAlbum", ano="1999")
         db.session.add(a1)
         db.session.commit()
 
         a1 = Album.query.filter_by(nome="TesteDeAlbum").first()
         self.assertEqual(a1.nome, "TesteDeAlbum")
-        self.assertEqual(a1.ano, "Foi?")
+        self.assertEqual(a1.ano, "1999")
 
         db.session.delete(a1)
         db.session.commit()

@@ -10,11 +10,10 @@ ____________________
 
 4- Upload de img - Em desenvolvimento
 
-5- Rodar no BD e fazer testes - completo mas a desenvolver
+5- Rodar no BD e fazer testes, DUCUMENTAÇÃO API - completo mas a desenvolver
 
-6- Deve haver estes campos para login: 
-senha e papel (comum ou privilegiado) - Só colocar um papel especial para usuario
-
+6- Fazer um adm e um usuario normal, o adm vai poder ver todos os usuarios normais podendo excluir
+modificar ou adicionar - Incompoleto 
 
 7- Guardar a quantidade de moedas/cedulas de um album 
 para fazer um grafico -  Apenas a ideia
@@ -28,7 +27,7 @@ para mandar fazer o grafico, logo ficar escondido - apenas a ideia
 
 11- Publicar no pythonanywhere
 
-12- Definir o mapeamento de classe "args e polimorfia" 
+12- Definir o mapeamento de classe "args e polimorfia" - Completo
 
 __________________________________________________________________________________________________
 

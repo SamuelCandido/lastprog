@@ -20,7 +20,7 @@ Rota padrão, deve retornar Back-end
 - Vai listar os albuns em json
 
 **/incluir_moeda**
-- Para fazer esta rota ficar operante podes fazer por meio do [Curl](curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_moeda)
+- Para fazer esta rota ficar operante podes fazer por meio do curl, que se encontra acima da função da rota no back/servidor-back.py
 **/incluir_cedula**
 **/incluir_album**
 

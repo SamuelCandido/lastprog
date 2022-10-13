@@ -5,7 +5,7 @@ Sistema de albuns de moedas/cedulas ("Galeria").
 
 python3 -m unittest discover -s ./tests/ -p "test_*.py" (RODAR DENTRO DE BACK)
 
-#Documentação API
+# Documentação API
 
 **/**
 Rota padrão, deve retornar Back-end 

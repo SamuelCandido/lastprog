@@ -7,7 +7,7 @@ from rotas.login import *
 
 @app.route("/")
 def inicio():
-    return 'Sistema de cadastro de moedas. '+\
+    return 'Este é o nosso sistema de cadastro de moedas, que está disponível no ip 191.52.7.80. Todas as rotas e os testes com curl estão disponíveis no arquivo "servidor-back.py".'+\
         '<a href="/listar_moedas">Operação listar</a>'
 
 @app.route("/listar_moedas")

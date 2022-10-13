@@ -14,12 +14,13 @@ Rota padrão, deve retornar Back-end
 - Vai listar as moedas em json
 
 **/listar_cedula**
-- Vai listar as moedas em json
+- Vai listar as cedula em json
 
 **/listar_album**
-- Vai listar as moedas em json
+- Vai listar os albuns em json
 
 **/incluir_moeda**
+- Para fazer esta rota ficar operante podes fazer por meio do [Curl](curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_moeda)
 **/incluir_cedula**
 **/incluir_album**
 

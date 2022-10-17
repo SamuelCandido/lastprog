@@ -1,9 +1,10 @@
 # Lastprog
-Sistema de albuns de moedas/cedulas ("Galeria").
+**Sistema de albuns de moedas/cedulas ("Galeria")**
 
 # TESTES
 
-python3 -m unittest discover -s ./tests/ -p "test_*.py" (RODAR DENTRO DE BACK)
+- Para funcionar os testes é necessario rodar dentro da pasta back
+- Em caso de erro tente: python3 -m unittest discover -s ./tests/ -p "test_*.py" (RODAR DENTRO DE BACK)
 
 # Documentação API
 

@@ -11,13 +11,13 @@
 **/**
 - Rota padrão, deve retornar o link do github: [Link do repositorio](https://github.com/SamuelCandido/lastprog)
 
-**/listar_moeda**
+**/listar_moedas**
 - Vai listar as moedas em json
 
-**/listar_cedula**
+**/listar_cedulas**
 - Vai listar as cedula em json
 
-**/listar_album**
+**/listar_albuns**
 - Vai listar os albuns em json
 
 **/incluir_moeda**

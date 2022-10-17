@@ -8,9 +8,11 @@ from rotas.login import *
 @app.route("/")
 def inicio():
     return '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">' +\
-        '<h1 style="text-align: center;">Sistema de gerenciamento de dinheiro</h1>'+\
-        '<a href="/https://github.com/SamuelCandido/lastprog">Link do diretório</a>'+\
-        '<button class="btn btn-primary" onclick="location.href=\'https://github.com/SamuelCandido/lastprog\'">Click-me</button>'
+        '<h1 style="text-align: center;" class="p-2 text-bg-primary">Sistema de gerenciamento de dinheiro</h1>'+\
+        '<h3 style="text-align: center;">Bem vindo a rota padrão</h3>'+\
+        '<h4 style="text-align: center;">⇩ Link para o diretorio do git ⇩</h4>'+\
+        '<button class="d-block btn btn-primary position-absolute top-50 start-50 translate-middle" onclick="location.href=\'https://github.com/SamuelCandido/lastprog\'">Click-me</button>'
+
 
 
 @app.route("/listar_moedas")

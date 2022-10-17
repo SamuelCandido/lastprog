@@ -5,8 +5,6 @@ from modelos.album import Album
 from rotas.login import *
 
 
-#from modelos.dinheiro import Dinheiro
-
 @app.route("/")
 def inicio():
     return '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">' +\
@@ -14,7 +12,9 @@ def inicio():
         '<a href="/https://github.com/SamuelCandido/lastprog">Link do diretório</a>'+\
         '<button class="btn btn-primary" onclick="location.href=\'https://github.com/SamuelCandido/lastprog\'">Click-me</button>'
 
+
 @app.route("/listar_moedas")
+@jwt_required()
 def listar_moedas():
     # obter as Moeda do cadastro
     moedas = db.session.query(Moeda).all()
@@ -26,8 +26,10 @@ def listar_moedas():
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta # retornar...
 
+
 # teste da rota: curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_moeda
 @app.route("/incluir_moeda", methods=['post'])
+@jwt_required()
 def incluir_moeda():
     # preparar uma resposta otimista
     resposta = jsonify({"resultado": "ok", "detalhes": "Moeda icluida com sucesso"})
@@ -46,8 +48,10 @@ def incluir_moeda():
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta # responder!
 
+
 # teste: curl -X DELETE http://localhost:5000/excluir_moeda/1
 @app.route("/excluir_moeda/<int:moeda_id>", methods=['DELETE'])
+@jwt_required()
 def excluir_moeda(moeda_id):
     # preparar uma resposta otimista
     resposta = jsonify({"resultado": "ok", "detalhes": "Moeda excluida com sucesso"})
@@ -72,8 +76,8 @@ $ curl -X DELETE http://localhost:5000/excluir_moeda/1
 '''
 
 
-
 @app.route("/listar_albuns")
+@jwt_required()
 def listar_albuns():
     # obter as Moeda do cadastro
     albums = db.session.query(Album).all()
@@ -85,8 +89,10 @@ def listar_albuns():
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta # retornar...
 
+
 # teste da rota: curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_moeda
 @app.route("/incluir_album", methods=['post'])
+@jwt_required()
 def incluir_album():
     # preparar uma resposta otimista
     resposta = jsonify({"resultado": "ok", "detalhes": "Album incluido com sucesso"})
@@ -105,8 +111,10 @@ def incluir_album():
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta # responder!
 
+
 # teste: curl -X DELETE http://localhost:5000/excluir_moeda/1
 @app.route("/excluir_album/<int:album_id>", methods=['DELETE'])
+@jwt_required()
 def excluir_album(album_id):
     # preparar uma resposta otimista
     resposta = jsonify({"resultado": "ok", "detalhes": "Album excluido com sucesso"})
@@ -136,8 +144,11 @@ def listar_cedulas():
     # PERMITIR resposta para outras pedidos oriundos de outras tecnologias
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta # retornar...
+
+
 # teste da rota: curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_cedula
 @app.route("/incluir_cedula", methods=['post'])
+@jwt_required()
 def incluir_cedula():
     # preparar uma resposta otimista
     resposta = jsonify({"resultado": "ok", "detalhes": "Cedula incluida com sucesso"})
@@ -155,6 +166,8 @@ def incluir_cedula():
     # adicionar cabeçalho de liberação de origem
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta # responder!
+
+
 # teste: curl -X DELETE http://localhost:5000/excluir_cedula/1
 @app.route("/excluir_cedula/<int:cedula_id>", methods=['DELETE'])
 @jwt_required()

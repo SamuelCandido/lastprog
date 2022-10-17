@@ -6,3 +6,4 @@ flask_jwt
 flask_sqlalchemy
 flask_bcrypt
 flask_cors
+

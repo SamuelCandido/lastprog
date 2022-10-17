@@ -1,7 +1,0 @@
-____________________
-## Tarefas commum ##
-____________________
-
-1- Seis classes 
-2-  Crud
-3- Dados: data, int, text

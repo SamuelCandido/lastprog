@@ -24,7 +24,7 @@ def login():
         access_token = create_access_token(identity=login)
 
         # retornar
-        resposta =  jsonify({"resultado":"ok", "detalhes":access_token}) 
+        resposta =  jsonify({"resultado":"ok", "detalhes":dict(token=access_token)})
     
     # adicionar cabeçalho de liberação de origem
     resposta.headers.add("Access-Control-Allow-Origin", "*") #meuservidor)

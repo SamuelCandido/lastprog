@@ -1,7 +1,7 @@
 $(function () { // quando o documento estiver pronto/carregado
     function atualizarToken(token) {
+        alert(token.detalhes)
         sessionStorage.setItem('login-token', token)
-        window.location = '../html/galeria.html'
     }
     
     let token = sessionStorage.getItem('login-token')
@@ -26,12 +26,11 @@ $(function () { // quando o documento estiver pronto/carregado
                 email: email,
                 senha: senha,
             }),
-
             success: atualizarToken,
             error: () => alert('não foi possível fazer o cadastro')
         })
 
-        return window.location = '../html/login.html';  
+       
     });
 
     // código para mapear click do botão incluir pessoa
@@ -46,7 +45,7 @@ $(function () { // quando o documento estiver pronto/carregado
 
             contentType: 'application/json',
             data: JSON.stringify({
-                email, senha
+                email: email, senha: senha
             }),
 
             success: (resultado) => {

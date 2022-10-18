@@ -5,8 +5,8 @@ from modelos.usuario import *
 
 @app.route("/cadastro", methods=['POST'])
 def cadastro():
-    
-    dados = request.get.json(force=True)
+    resposta = jsonify({"resultado": "ok", "detalhes":" Usuario cadastrado"})
+    dados = request.get_json(force=True)
     if dados["nome"] == "" or dados["email"] == "" or dados["senha"] == "": 
         return jsonify({"resultado":"erro", "detalhes":"Nome de usuario não pode ser vazio"})
     nome = dados['nome']
@@ -19,7 +19,7 @@ def cadastro():
         resposta = jsonify({"resultado": "erro", "detalhes":" Usuario já existente"})
 
     try: # tentar executar a operação
-      nova = Usuario(email=email, senha=cifrar(senha))# criar a nova pessoa
+      nova = Usuario(nome=nome, email=email, senha=cifrar(senha))# criar a nova pessoa
       db.session.add(nova) # adicionar no BD
       db.session.commit() # efetivar a operação de gravação
     except Exception as e: # em caso de erro...

@@ -2,7 +2,8 @@ from config.config import *
 from modelos.moeda import Moeda
 from modelos.cedula import Cedula
 from modelos.album import Album
-from rotas.login import *
+from rotas import cadastro
+from rotas import login
 
 
 @app.route("/")

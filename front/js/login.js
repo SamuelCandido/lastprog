@@ -28,7 +28,7 @@ $(function () { // quando o documento estiver pronto/carregado
             }),
 
             success: atualizarToken,
-            error: () => alert('não foi possível fazer login')
+            error: () => alert('não foi possível fazer o cadastro')
         })
 
         return window.location = '../html/login.html';  

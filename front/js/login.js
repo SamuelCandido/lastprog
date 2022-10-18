@@ -17,7 +17,7 @@ $(function () { // quando o documento estiver pronto/carregado
         var senha = $("#senhaCad").val();
 
         $.ajax({
-            url: '/cadastro',
+            url: '/cadastro', // precisa colocar o teu ip e porta
             method: 'POST',
 
             contentType: 'application/json',
@@ -41,7 +41,7 @@ $(function () { // quando o documento estiver pronto/carregado
         var senha = $("#campoSenha").val();
 
         $.ajax({
-            url: '/login',
+            url: '/login', // precisa colocar o teu ip e porta
             method: 'POST',
 
             contentType: 'application/json',

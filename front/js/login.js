@@ -12,8 +12,9 @@ $(function () { // quando o documento estiver pronto/carregado
 
     $(document).on("click", "#btCadastrar", function () {
         //pegar dados da tela
-        var email = $("#campoEmail").val();
-        var senha = $("#campoSenha").val();
+        var nome = $("#nomeCad").val();
+        var email = $("#emailCad").val();
+        var senha = $("#senhaCad").val();
 
         $.ajax({
             url: '/cadastro',
@@ -21,6 +22,7 @@ $(function () { // quando o documento estiver pronto/carregado
 
             contentType: 'application/json',
             data: JSON.stringify({
+                nome: nome,
                 email: email,
                 senha: senha,
             }),

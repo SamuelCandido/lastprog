@@ -15,7 +15,7 @@ def cadastro():
 
     usuario = Usuario.query.filter_by(nome=nome, email=email, senha=cifrar(senha)).first()
     
-    if encontrado != None: 
+    if usuario != None: 
         resposta = jsonify({"resultado": "erro", "detalhes":" Usuario já existente"})
 
     try: # tentar executar a operação

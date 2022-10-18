@@ -17,7 +17,7 @@ $(function () { // quando o documento estiver pronto/carregado
         var senha = $("#senhaCad").val();
 
         $.ajax({
-            url: 'localhost:5000/cadastro', // precisa colocar o teu ip e porta
+            url: 'http://localhost:5000/cadastro', // precisa colocar o teu ip e porta
             method: 'POST',
 
             contentType: 'application/json',
@@ -41,7 +41,7 @@ $(function () { // quando o documento estiver pronto/carregado
         var senha = $("#campoSenha").val();
 
         $.ajax({
-            url: 'localhost:5000/login', // precisa colocar o teu ip e porta
+            url: 'http://localhost:5000/login', // precisa colocar o teu ip e porta
             method: 'POST',
 
             contentType: 'application/json',
@@ -52,6 +52,7 @@ $(function () { // quando o documento estiver pronto/carregado
             success: (resultado) => {
                 if (resultado.resultado == "ok") {
                     atualizarToken(resultado.detalhes)
+                    return window.location = '../html/galeria.html';
                 } else {
                     alert("Erro ao fazer login: " + resultado.detalhes)
                 }
@@ -59,7 +60,7 @@ $(function () { // quando o documento estiver pronto/carregado
 
             error: () => {
                 alert("Não foi possível fazer login.")
-            }
+            } 
         })  
     });   
 });

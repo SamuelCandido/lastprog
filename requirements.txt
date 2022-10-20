@@ -1,6 +1,3 @@
-pip3 install
-
-unittest
 flask
 flask_jwt
 flask_jwt_extended

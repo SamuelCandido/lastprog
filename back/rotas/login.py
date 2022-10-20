@@ -35,7 +35,7 @@ def login():
 
 ''' 
 RESULTADOS DE TESTES:
-$ curl -X POST localhost:5000/login -d '{"login":"josilva@gmail.com","senha":"joao123"}' -H 'Content-Type: application/json'
+$ curl -X POST localhost:5000/login -d '{"email":"josilva@gmail.com","senha":"joao123"}' -H 'Content-Type: application/json'
 {
   "detalhes": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1ODMxNTEzOSwianRpIjoiZTVmMGVjMGEtOGZjMC00N2QyLWE4YjItOTMzNTY4MjMwZTM5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Impvc2lsdmFAZ21haWwuY29tIiwibmJmIjoxNjU4MzE1MTM5LCJleHAiOjE2NTgzMTYwMzl9.DjTA7h8idYfFpXixYl7gCGtu9rmahlj2IXTtlbkE0nc", 
   "resultado": "ok"

@@ -28,3 +28,5 @@ def cadastro():
     # adicionar cabeçalho de liberação de origem
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta # responder!
+
+# curl -X POST localhost:5000/cadastro -d '{"nome":"joao da silva","email":"josilva@gmail.com","senha":"joao123"}' -H 'Content-Type: application/json'

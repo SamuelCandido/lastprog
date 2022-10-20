@@ -30,8 +30,11 @@ class Dinheiro {
 }
 
 class Cedula {
+  String conservacao
 }
+
 class Moeda {
+  String material
 }
 
 Usuario *-- Album

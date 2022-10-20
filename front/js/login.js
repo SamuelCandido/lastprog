@@ -1,6 +1,5 @@
 $(function () { // quando o documento estiver pronto/carregado
     function atualizarToken(token) {
-        alert(token.detalhes)
         sessionStorage.setItem('login-token', token)
     }
     
@@ -26,8 +25,18 @@ $(function () { // quando o documento estiver pronto/carregado
                 email: email,
                 senha: senha,
             }),
-            success: atualizarToken,
-            error: () => alert('não foi possível fazer o cadastro')
+            success: (resultado) => {
+                if (resultado.resultado == "ok") {
+                    atualizarToken(resultado.detalhes)
+                    return window.location = '../html/login.html';
+                } else {
+                    alert("Erro ao fazer login: " + resultado.detalhes)
+                }
+            },
+
+            error: () => {
+                alert("Não foi possível fazer o cadastro.")
+            } 
         })
 
        

@@ -27,7 +27,6 @@ $(function () { // quando o documento estiver pronto/carregado
             }),
             success: (resultado) => {
                 if (resultado.resultado == "ok") {
-                    atualizarToken(resultado.detalhes)
                     return window.location = '../html/login.html';
                 } else {
                     alert("Erro ao fazer login: " + resultado.detalhes)
@@ -59,7 +58,7 @@ $(function () { // quando o documento estiver pronto/carregado
 
             success: (resultado) => {
                 if (resultado.resultado == "ok") {
-                    atualizarToken(resultado.detalhes)
+                    atualizarToken(resultado.detalhes.token)
                     return window.location = '../html/galeria.html';
                 } else {
                     alert("Erro ao fazer login: " + resultado.detalhes)

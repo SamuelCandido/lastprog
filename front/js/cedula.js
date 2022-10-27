@@ -1,26 +1,26 @@
 $(function() { // quando o documento estiver pronto/carregado
     
-    // código para mapear click do botão incluir moeda
-    $(document).on("click", "#btIncluir", function() {
+    // código para mapear click do botão incluir cedula
+    $(document).on("click", "#btIncluirCedula", function() {
         //pegar dados da tela
-        nome = $("#nomeMoeda").val();
-        ano = $("#anoMoeda").val();
+        nome = $("#nomeCedula").val();
+        ano = $("#anoCedula").val();
         // preparar dados no formato json
         var dados = JSON.stringify({ nome: nome, ano: ano});
         // fazer requisição para o back-end
         $.ajax({
-            url: 'http://localhost:5000/incluir_moeda',
+            url: 'http://localhost:5000/incluir_cedula',
             type: 'POST',
             dataType: 'json', // os dados são recebidos no formato json
             contentType: 'application/json', // tipo dos dados enviados
             data: dados, // estes são os dados enviados
-            success: moedaIncluida, // chama a função listar para processar o resultado
+            success: cedulaIncluida, // chama a função listar para processar o resultado
             error: erroAoIncluir
         });
-        function moedaIncluida (retorno) {
+        function cedulaIncluida (retorno) {
             if (retorno.resultado == "ok") { // a operação deu certo?
                 // informar resultado de sucesso
-                alert("Moeda incluída com sucesso!");
+                alert("Cedula incluída com sucesso!");
                 //$("#mensagem").text("Pessoa incluída com sucesso!");
                 window.location.reload();
                 // limpar os campos
@@ -43,7 +43,7 @@ $(function () { // quando o documento estiver pronto/carregado
 
     // chamada ao backend
     $.ajax({
-        url: 'http://localhost:5000/listar_moedas', // lembrar de trocar a url
+        url: 'http://localhost:5000/listar_cedulas', // lembrar de trocar a url
         method: 'GET',
         dataType: 'json', // os dados são recebidos no formato json
         success: listar, // chama a função listar para processar o resultado
@@ -53,17 +53,17 @@ $(function () { // quando o documento estiver pronto/carregado
     });
 
     // função executada quando tudo dá certo
-    function listar(moedas) {
+    function listar(cedulas) {
         // percorrer a lista de pessoas retornadas; 
-        for (var i in moedas) { //i vale a posição no vetor
-            lin = '<tr>' + // elabora linha com os dados da moedas
-                '<td>' + moedas[i].nome + '</td>' +
-                '<td>' + moedas[i].ano + '</td>' +
-                '<td><img src="http://localhost:5000/get_image/' + moedas[i].id + '"></td>' +
-                '<td><button class="btn-close btn-close-black deletar-moeda" data-id-moeda="'+moedas[i].id+'"></button></td>' +
+        for (var i in cedulas) { //i vale a posição no vetor
+            lin = '<tr>' + // elabora linha com os dados da cedulas
+                '<td>' + cedulas[i].nome + '</td>' +
+                '<td>' + cedulas[i].ano + '</td>' +
+                '<td><img src="http://localhost:5000/get_image/' + cedulas[i].id + '"></td>' +
+                '<td><button class="btn-close btn-close-black deletar-cedula" data-id-cedula="'+cedulas[i].id+'"></button></td>' +
                 '</tr>';
             // adiciona a linha no corpo da tabela
-            $('#corpoTabelaMoedas').append(lin);
+            $('#corpoTabelaCedulas').append(lin);
             
         };
     };
@@ -71,23 +71,23 @@ $(function () { // quando o documento estiver pronto/carregado
 
 
 
-$(document).on("click", ".deletar-moeda", function() {
+$(document).on("click", ".deletar-cedula", function() {
 
     // $(this) pega o botao que foi 
-    // .attr('data-id-moeda') pega o atributo
+    // .attr('data-id-cedula') pega o atributo
     // data-(alguma coisa) é usado para atributos com nomes customizados
-    let id_moeda = $(this).attr('data-id-moeda');
+    let id_cedula = $(this).attr('data-id-cedula');
 
     $.ajax({
-        url: 'http://localhost:5000/excluir_moeda/'+ id_moeda,
+        url: 'http://localhost:5000/excluir_cedula/'+ id_cedula,
         type: 'DELETE',
-        success: moedaExcluida, // chama a função listar para processar o resultado
+        success: cedulaExcluida, // chama a função listar para processar o resultado
         error: erroAoExcluir
     });
-    function moedaExcluida (retorno) {
+    function cedulaExcluida (retorno) {
         if (retorno.resultado == "ok") { // a operação deu certo?
             // informar resultado de sucesso
-            alert("Moeda Excluída com sucesso!");
+            alert("Cedula Excluída com sucesso!");
             window.location.reload()
             //$("#mensagem").text("Moeda excluída com sucesso!");
             // // limpar os campos

@@ -27,6 +27,7 @@
   
 
   <script src="../js/moeda.js"></script>
+  <script src="../js/cedula.js"></script>
 
 </head>
 
@@ -75,13 +76,13 @@
           <div class="modal-body">
             <form action="https://localhost:5000" onsubmit="return false;" enctype="multipart/form-data" id="meuform">
               <div class="form-floating mb-4">
-                <input type="text" class="form-control form-control-lg" placeholder="Ex.: samuca@gmail.com" id="typeUserX-2"></input>
-                <label class="form-label" for="typeUserX-2">Nome da moeda</label>
+                <input type="text" class="form-control form-control-lg" placeholder="Ex.: samuca@gmail.com" id="nomeMoeda"></input>
+                <label class="form-label" for="nomeMoeda">Nome da moeda</label>
               </div>
 
               <div class="form-floating mb-4">
-                <input type="text" class="form-control form-control-lg" placeholder="Ex.: C@rL0tA d!V" id="typeAnoX-2"></input>
-                <label class="form-label"  for="typeAnoX-2">Ano da moeda</label>
+                <input type="text" class="form-control form-control-lg" placeholder="Ex.: C@rL0tA d!V" id="anoMoeda"></input>
+                <label class="form-label"  for="anoMoeda">Ano da moeda</label>
               </div>
 
 
@@ -102,6 +103,7 @@
       </div>
     </div>
   
+    <!-- Cedulas           ###########################################                          -->
     <h2> Cedulas </h2>
     <table class="table">
       <thead>
@@ -112,42 +114,42 @@
           <th scope="col">Ação</th>
         </tr>
       </thead>
-      <tbody id="corpoTabelaCedula">
+      <tbody id="corpoTabelaCedulas">
       </tbody>
     </table>
     
     <hr style="color:  gray;">
 
     <!-- Botão que faz descer o modal -->
-    <button id="btAddMoney" type="button" class="btn btn-info" style="color: white;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <button id="btAddCedula" type="button" class="btn btn-info" style="color: white;" data-bs-toggle="modalCedula" data-bs-target="#staticmodalCedula">
       Adicionar Cedula
     </button>
 
-    <!-- Modal- Vcs vao mudar tudo que tem moeda para cedula -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <!-- Modal- Vcs vao mudar tudo que tem cedula para cedula -->
+    <div class="modal fade" id="modalCedula" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
 
           <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Cadastre sua moeda aqui</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="staticBackdropLabel">Cadastre sua cedula aqui</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modalCedula" aria-label="Close"></button>
           </div>
 
           <div class="modal-body">
             <form action="https://localhost:5000" onsubmit="return false;" enctype="multipart/form-data" id="meuform">
               <div class="form-floating mb-4">
-                <input type="text" class="form-control form-control-lg" placeholder="Ex.: samuca@gmail.com" id="typeUserX-2"></input>
-                <label class="form-label" for="typeUserX-2">Nome da moeda</label>
+                <input type="text" class="form-control form-control-lg" placeholder="Ex.: samuca@gmail.com" id="nomeCedula"></input>
+                <label class="form-label" for="nomeCedula">Nome da cedula</label>
               </div>
 
               <div class="form-floating mb-4">
-                <input type="text" class="form-control form-control-lg" placeholder="Ex.: C@rL0tA d!V" id="typeAnoX-2"></input>
-                <label class="form-label"  for="typeAnoX-2">Ano da moeda</label>
+                <input type="text" class="form-control form-control-lg" placeholder="Ex.: C@rL0tA d!V" id="anoCedula"></input>
+                <label class="form-label"  for="anoCedula">Ano da cedula</label>
               </div>
 
 
               <div class="form-group">
-                <label>Foto da moeda</label>
+                <label>Foto da cedula</label>
                 <input class="form-control" type="file" name="foto" id="campoFoto">
                 <span id="nomearquivo"></span>
               </div>
@@ -158,12 +160,13 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-            <button id="btIncluir" type="button" class="btn btn-info" style="color: white;">Enviar</button>
+            <button id="btIncluirCedula" type="button" class="btn btn-info" style="color: white;">Enviar</button>
           </div>
         </div>
       </div>
     </div>
     <hr style="color:  gray;">
+
     <button id="btAddCotacao" type="button" class="btn btn-info" style="color: white;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
       Adicionar cotação do dia
     </button>

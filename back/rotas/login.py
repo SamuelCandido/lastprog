@@ -21,7 +21,7 @@ def login():
         # https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status        
 
         # criar a json web token (JWT)
-        access_token = create_access_token(identity=login)
+        access_token = create_access_token(identity=email)
 
         # retornar
         resposta =  jsonify({"resultado":"ok", "detalhes":dict(token=access_token)})

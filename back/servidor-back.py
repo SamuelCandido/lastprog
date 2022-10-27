@@ -15,9 +15,8 @@ def inicio():
         '<button class="d-block btn btn-primary position-absolute top-50 start-50 translate-middle" onclick="location.href=\'https://github.com/SamuelCandido/lastprog\'">Click-me</button>'
 
 
-
-@app.route("/listar_moedas")
 @jwt_required
+@app.route("/listar_moedas")
 def listar_moedas():
     # obter as Moeda do cadastro
     moedas = db.session.query(Moeda).all()
@@ -31,8 +30,8 @@ def listar_moedas():
 
 
 # teste da rota: curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_moeda
-@app.route("/incluir_moeda", methods=['post'])
 @jwt_required
+@app.route("/incluir_moeda", methods=['post'])
 def incluir_moeda():
     # preparar uma resposta otimista
     resposta = jsonify({"resultado": "ok", "detalhes": "Moeda icluida com sucesso"})
@@ -53,8 +52,8 @@ def incluir_moeda():
 
 
 # teste: curl -X DELETE http://localhost:5000/excluir_moeda/1
-@app.route("/excluir_moeda/<int:moeda_id>", methods=['DELETE'])
 @jwt_required
+@app.route("/excluir_moeda/<int:moeda_id>", methods=['DELETE'])
 def excluir_moeda(moeda_id):
     # preparar uma resposta otimista
     resposta = jsonify({"resultado": "ok", "detalhes": "Moeda excluida com sucesso"})
@@ -78,9 +77,8 @@ $ curl -X DELETE http://localhost:5000/excluir_moeda/1
 } 
 '''
 
-
-@app.route("/listar_albuns")
 @jwt_required
+@app.route("/listar_albuns")
 def listar_albuns():
     # obter as Moeda do cadastro
     albums = db.session.query(Album).all()
@@ -94,8 +92,8 @@ def listar_albuns():
 
 
 # teste da rota: curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_moeda
-@app.route("/incluir_album", methods=['post'])
 @jwt_required
+@app.route("/incluir_album", methods=['post'])
 def incluir_album():
     # preparar uma resposta otimista
     resposta = jsonify({"resultado": "ok", "detalhes": "Album incluido com sucesso"})
@@ -116,8 +114,8 @@ def incluir_album():
 
 
 # teste: curl -X DELETE http://localhost:5000/excluir_moeda/1
-@app.route("/excluir_album/<int:album_id>", methods=['DELETE'])
 @jwt_required
+@app.route("/excluir_album/<int:album_id>", methods=['DELETE'])
 def excluir_album(album_id):
     # preparar uma resposta otimista
     resposta = jsonify({"resultado": "ok", "detalhes": "Album excluido com sucesso"})
@@ -135,8 +133,8 @@ def excluir_album(album_id):
 
 
 #trocar cedulas por cedula
-@app.route("/listar_cedulas")
 @jwt_required
+@app.route("/listar_cedulas")
 def listar_cedulas():
     # obter as Cedula do cadastro
     cedulas = db.session.query(Cedula).all()
@@ -150,8 +148,8 @@ def listar_cedulas():
 
 
 # teste da rota: curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_cedula
-@app.route("/incluir_cedula", methods=['post'])
 @jwt_required
+@app.route("/incluir_cedula", methods=['post'])
 def incluir_cedula():
     # preparar uma resposta otimista
     resposta = jsonify({"resultado": "ok", "detalhes": "Cedula incluida com sucesso"})
@@ -172,8 +170,8 @@ def incluir_cedula():
 
 
 # teste: curl -X DELETE http://localhost:5000/excluir_cedula/1
-@app.route("/excluir_cedula/<int:cedula_id>", methods=['DELETE'])
 @jwt_required
+@app.route("/excluir_cedula/<int:cedula_id>", methods=['DELETE'])
 def excluir_cedula(cedula_id):
     # preparar uma resposta otimista
     resposta = jsonify({"resultado": "ok", "detalhes": "Cedula excluida com sucesso"})

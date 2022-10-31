@@ -1,3 +1,5 @@
+@Para fazer o login: Token de sessao vai ser comparado com o token do BD 
+
 @Classe moeda, já ta pronta
 
 @Classe cedula, mesma idea da moeda

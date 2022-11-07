@@ -13,8 +13,8 @@ $(function(){
     //incluir album
     $("#btIncluirCard").click(function() {
         //pegar dados da tela
-        nome = $("#tituloCard").text();
-        descricao = $("#descricaoCard").text();
+        nome = $("#tituloCard").val();
+        descricao = $("#descricaoCard").val();
         // preparar dados no formato json
         var dados = JSON.stringify({ nome: nome, descricao: descricao});
         // fazer requisição para o back-end
@@ -72,13 +72,8 @@ $(function(){
         function albumExcluido (retorno) {
             if (retorno.resultado == "ok") { // a operação deu certo?
                 // informar resultado de sucesso
-                alert("Album excluído com sucesso!");
+                $("#mensagem").text("Album excluído com sucesso!");
                 window.location.reload()
-                //$("#mensagem").text("Moeda excluída com sucesso!");
-                // // limpar os campos
-                // $("#typeUserX-2").val("");
-                // $("#typeAnoX-2").val("");
-                // $('#corpoTabelaMoedas').remove(lin);
             } 
             else {
                 // informar mensagem de erro

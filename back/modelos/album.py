@@ -7,6 +7,7 @@ class Album(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(254), nullable=True)
     descricao = db.Column(db.String(254))
+    usuario_id = db.Column(db.Integer, db.ForeignKey('usuario.id'), primary_key=True)
 
     # método para expressar a moeda em forma de texto
     def __str__(self):

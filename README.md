@@ -46,3 +46,17 @@
 **/excluir_album**
 - Ao excluir, deve retornar: "resultado": "ok", "detalhes": "Album excluido com sucesso"
 
+**/cadastro**
+- Deve incluir pessoa/usuario no banco de dados
+- Em caso de usuario existente deve retornar: "resultado": "erro", "detalhes": "Usuario já existente"
+- Em caso de nome/email Null deve retornar: "resultado":"erro", "detalhes":"Nome de usuario não pode ser vazio"
+- Em caso de qualquer erro não tratado deve retornar: "resultado":"erro", "detalhes":str(e)
+
+**/login**
+- Deve ao acessar, com email e senhas corretos, sua galeria
+- O mesmo se encontra no erro por qualquer usuario acessar a mesma galeria
+- Em caso de login correto deve retornar: "resultado":"ok", "detalhes":dict(token=access_token)
+- Em caso de email/senha Null deve retornar: "resultado":"erro", "detalhes":"Nome de usuario não pode ser vazio"
+- Em caso de login incorreto deve retornar: "resultado": "erro", "detalhes":"usuario ou senha incorreto(s)"
+
+

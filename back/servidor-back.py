@@ -2,8 +2,8 @@ from config.config import *
 from modelos.moeda import Moeda
 from modelos.cedula import Cedula
 from modelos.album import Album
-from rotas import cadastro
-from rotas import login
+from rotas.cadastro import cadastro
+from rotas.login import login
 
 
 @app.route("/")
@@ -162,7 +162,7 @@ def incluir_cedula():
       db.session.add(nova) # adicionar no BD
       db.session.commit() # efetivar a operação de gravação
     except Exception as e: # em caso de erro...
-      # informar mensagem de erro
+      # informar mensagem de errohttp://localhost:5000/
       resposta = jsonify({"resultado":"erro", "detalhes":str(e)})
     # adicionar cabeçalho de liberação de origem
     resposta.headers.add("Access-Control-Allow-Origin", "*")

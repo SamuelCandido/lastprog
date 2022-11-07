@@ -3,8 +3,8 @@ $(function() { // quando o documento estiver pronto/carregado
     // código para mapear click do botão incluir cedula
     $(document).on("click", "#btIncluirCedula", function() {
         //pegar dados da tela
-        nome = $("#nomeCedula").val();
-        ano = $("#anoCedula").val();
+        nome = $("#nomeCedula").text();
+        ano = $("#anoCedula").text();
         // preparar dados no formato json
         var dados = JSON.stringify({ nome: nome, ano: ano});
         // fazer requisição para o back-end

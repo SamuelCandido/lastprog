@@ -13,8 +13,8 @@ $(function(){
     //incluir album
     $("#btIncluirCard").click(function() {
         //pegar dados da tela
-        nome = $("#tituloCard").val();
-        descricao = $("#descricaoCard").val();
+        nome = $("#tituloCard").text();
+        descricao = $("#descricaoCard").text();
         // preparar dados no formato json
         var dados = JSON.stringify({ nome: nome, descricao: descricao});
         // fazer requisição para o back-end

@@ -3,8 +3,8 @@ $(function() { // quando o documento estiver pronto/carregado
     // código para mapear click do botão incluir moeda
     $(document).on("click", "#btIncluir", function() {
         //pegar dados da tela
-        nome = $("#nomeMoeda").val();
-        ano = $("#anoMoeda").val();
+        nome = $("#nomeMoeda").text();
+        ano = $("#anoMoeda").text();
         // preparar dados no formato json
         var dados = JSON.stringify({ nome: nome, ano: ano});
         // fazer requisição para o back-end

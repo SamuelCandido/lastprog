@@ -4,16 +4,16 @@ from modelos.cedula import Cedula
 from modelos.album import Album
 from rotas.cadastro import cadastro
 from rotas.login import login
+from flask import request
+
 
 
 @app.route("/")
 def inicio():
     return '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">' +\
-        '<h1 style="text-align: center;" class="p-2 text-bg-primary">Sistema de gerenciamento de dinheiro</h1>'+\
-        '<h3 style="text-align: center;">Bem vindo a rota padrão</h3>'+\
-        '<h4 style="text-align: center;">⇩ Link para o diretorio do git ⇩</h4>'+\
-        '<button class="d-block btn btn-primary position-absolute top-50 start-50 translate-middle" onclick="location.href=\'https://github.com/SamuelCandido/lastprog\'">Click-me</button>'
-
+        '<a> Backend ta no dale! Galeria de dinheiro feito por: Samuel, Alana, Yara:</a>'+\
+        '<a href="https://github.com/SamuelCandido/lastprog">    Repositorio.</a>'+\
+        '   IP da maquina: '+request.host+''    
 
 @jwt_required
 @app.route("/listar_moedas")
@@ -77,22 +77,22 @@ $ curl -X DELETE http://localhost:5000/excluir_moeda/1
 } 
 '''
 
-@jwt_required
+@jwt_required()
 @app.route("/listar_albuns")
 def listar_albuns():
     # obter as Moeda do cadastro
-    albums = db.session.query(Album).all()
+    albuns = db.session.query(Album).filter_by(usuario_id=get_jwt_identity()).all() #filter
     # aplicar o método json que a classe Moeda possui a cada elemento da lista
-    albums_em_json = [ x.json() for x in albums ]
+    albuns_em_json = [ x.json() for x in albuns ]
     # converter a lista do python para json
-    resposta = jsonify(albums_em_json)
+    resposta = jsonify(albuns_em_json)
     # PERMITIR resposta para outras pedidos oriundos de outras tecnologias
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta # retornar...
 
 
 # teste da rota: curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_moeda
-@jwt_required
+@jwt_required()
 @app.route("/incluir_album", methods=['post'])
 def incluir_album():
     # preparar uma resposta otimista
@@ -114,7 +114,7 @@ def incluir_album():
 
 
 # teste: curl -X DELETE http://localhost:5000/excluir_moeda/1
-@jwt_required
+@jwt_required()
 @app.route("/excluir_album/<int:album_id>", methods=['DELETE'])
 def excluir_album(album_id):
     # preparar uma resposta otimista
@@ -133,7 +133,7 @@ def excluir_album(album_id):
 
 
 #trocar cedulas por cedula
-@jwt_required
+@jwt_required()
 @app.route("/listar_cedulas")
 def listar_cedulas():
     # obter as Cedula do cadastro
@@ -148,7 +148,7 @@ def listar_cedulas():
 
 
 # teste da rota: curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_cedula
-@jwt_required
+@jwt_required()
 @app.route("/incluir_cedula", methods=['post'])
 def incluir_cedula():
     # preparar uma resposta otimista
@@ -170,7 +170,7 @@ def incluir_cedula():
 
 
 # teste: curl -X DELETE http://localhost:5000/excluir_cedula/1
-@jwt_required
+@jwt_required()
 @app.route("/excluir_cedula/<int:cedula_id>", methods=['DELETE'])
 def excluir_cedula(cedula_id):
     # preparar uma resposta otimista

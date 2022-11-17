@@ -77,8 +77,9 @@ $ curl -X DELETE http://localhost:5000/excluir_moeda/1
 } 
 '''
 
-@jwt_required()
+
 @app.route("/listar_albuns")
+@jwt_required()
 def listar_albuns():
     # obter as Moeda do cadastro
     albuns = db.session.query(Album).filter_by(usuario_id=get_jwt_identity()).all() #filter
@@ -92,13 +93,15 @@ def listar_albuns():
 
 
 # teste da rota: curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_moeda
+
+@app.route("/incluir_album", methods=['POST'])
 @jwt_required()
-@app.route("/incluir_album", methods=['post'])
 def incluir_album():
     # preparar uma resposta otimista
     resposta = jsonify({"resultado": "ok", "detalhes": "Album incluido com sucesso"})
     # receber as informações da nova moeda
     dados = request.get_json() #(force=True) dispensa Content-Type na requisição
+    dados.update({'usuario_id':get_jwt_identity()})
     if dados["nome"] == "": 
         return jsonify({"resultado":"erro", "detalhes":"Nome do album não pode ser vazio"})
     try: # tentar executar a operação

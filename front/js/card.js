@@ -1,9 +1,11 @@
 $(function(){
+    const JWT = sessionStorage.getItem("login-token")
 
     $.ajax({
         url: 'http://localhost:5000/listar_albuns', // lembrar de trocar a url
         method: 'GET',
         dataType: 'json', // os dados são recebidos no formato json
+        headers:{ Authorization: 'Bearer ' + JWT },
         success: listar, // chama a função listar para processar o resultado
         error: function () {
             alert("erro ao ler dados, verifique o backend");
@@ -23,7 +25,8 @@ $(function(){
             type: 'POST',
             dataType: 'json', // os dados são recebidos no formato json
             contentType: 'application/json', // tipo dos dados enviados
-            data: dados, // estes são os dados enviados
+            data: dados, // estes são os dados enviados,
+            headers:{ Authorization: 'Bearer ' + JWT },
             success: albumIncluido, // chama a função listar para processar o resultado
             error: erroAoIncluir
         });

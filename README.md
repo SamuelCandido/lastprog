@@ -21,29 +21,35 @@
 - Vai listar os albuns em json
 
 **/incluir_moeda**
+- teste da rota: curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_moeda
 - Para fazer esta rota ficar operante podes fazer por meio do curl, que se encontra acima da função da rota no back/servidor-back.py
 - Se der certo a inclusão deve retornar: "resultado": "ok",  "detalhes": "Moeda incluida com sucesso"
 - Em caso Nome == null, deve retornar: "resultado": "erro",  "detalhes": "Nome da moeda não pode ser vazia"
 - Em caso de qualquer erro, deve retornar: "resultado": "erro",  "detalhes": (Descrição do erro)
 
 **/incluir_cedula**
+- teste da rota: curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_cedula
 - Para fazer esta rota ficar operante podes fazer por meio do curl, que se encontra acima da função da rota no back/servidor-back.py
 - Se der certo a inclusão deve retornar: "resultado": "ok",  "detalhes": "Cedula incluida com sucesso"
 - Em caso Nome == null, deve retornar: "resultado": "erro",  "detalhes": "Nome do cedula não pode ser vazia"
 - Em caso de qualquer erro, deve retornar: "resultado": "erro",  "detalhes": (Descrição do erro)
 
 **/incluir_album**
+- teste da rota: curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_album
 - Para fazer esta rota ficar operante podes fazer por meio do curl, que se encontra acima da função da rota no back/servidor-back.py
 - Se der certo a inclusão deve retornar: "resultado": "ok",  "detalhes": "Album incluido com sucesso"
 - Em caso Nome == null, deve retornar: "resultado": "erro",  "detalhes": "Nome do album não pode ser vazio"
 
 **/excluir_moeda**
+- teste: curl -X DELETE http://localhost:5000/excluir_moeda/1
 - Ao excluir, deve retornar: "resultado": "ok", "detalhes": "Moeda excluida com sucesso"
 
 **/excluir_cedula**
+- teste: curl -X DELETE http://localhost:5000/excluir_cedula/1
 - Ao excluir, deve retornar: "resultado": "ok", "detalhes": "Cedula excluida com sucesso"
 
 **/excluir_album**
+- teste: curl -X DELETE http://localhost:5000/excluir_album/1
 - Ao excluir, deve retornar: "resultado": "ok", "detalhes": "Album excluido com sucesso"
 
 **/cadastro**

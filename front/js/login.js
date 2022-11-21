@@ -70,4 +70,9 @@ $(function () { // quando o documento estiver pronto/carregado
             } 
         })  
     });   
+
+    $(document).on("click", "#logout", function () { 
+        sessionStorage.removeItem('login-token');
+        window.location = '../html/login.html';  
+    });  
 });

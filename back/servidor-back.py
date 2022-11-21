@@ -4,7 +4,8 @@ from modelos.cedula import Cedula
 from modelos.album import Album
 from rotas.cadastro import cadastro
 from rotas.login import login
-from flask import request
+from flask import request, send_from_directory
+from config.config import path
 
 
 
@@ -12,8 +13,13 @@ from flask import request
 def inicio():
     return '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">' +\
         '<a> Backend ta no dale! Galeria de dinheiro feito por: Samuel, Alana, Yara:</a>'+\
-        '<a href="https://github.com/SamuelCandido/lastprog">    Repositorio.</a>'+\
-        '   IP da maquina: '+request.host+''    
+        '<a href="https://github.com/SamuelCandido/lastprog">    Repositorio. </a> IP da maquina, (front): '+\
+        '<a href="'+request.host+'/front/html/cadastro.html">'+request.host+'</a>'    
+
+@app.route("/front/html/<string:path_>")
+def login_pagina(path_: str):
+    path_final = os.path.join(path, '../../front/html')
+    return send_from_directory(path_final, path_)
 
 @jwt_required
 @app.route("/listar_moedas")

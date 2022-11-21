@@ -25,6 +25,7 @@
 
     <script src="../js/moeda.js"></script>
     <script src="../js/card.js"></script>
+    <script src="../js/login.js"></script>
 
 
     <style>
@@ -47,7 +48,20 @@
 </head>
 <body>
     <div class="vh-100" id="teste">
+        <!-- Menu tem que estilizar -->
+        <div class="btn-group d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-secondary dropdown-toggle me-md-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Menu
+            </button>
+            <ul class="dropdown-menu">
+                <li><a id="logout" class="dropdown-item" >logout</a></li>
+                <li><a id="logout" class="dropdown-item" >logout</a></li>
+                <li><a id="logout" class="dropdown-item" >logout</a></li>
+            </ul>
+        </div>
+
         <h1 style="text-align: center;">Bem vindo</h1>
+
         <h2>
             <span id="username" style="font-style:italic;"></span>
         </h2>

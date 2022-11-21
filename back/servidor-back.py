@@ -21,7 +21,7 @@ def login_pagina(path_: str):
     path_final = os.path.join(path, '../../front/html')
     return send_from_directory(path_final, path_)
 
-# teste curl localhost:5000/listar_moedas
+# teste: curl localhost:5000/listar_moedas
 @jwt_required
 @app.route("/listar_moedas")
 def listar_moedas():
@@ -84,7 +84,7 @@ $ curl -X DELETE http://localhost:5000/excluir_moeda/1
 } 
 '''
 
-# teste curl localhost:5000/listar_albuns
+# teste: curl localhost:5000/listar_albuns
 @app.route("/listar_albuns")
 @jwt_required()
 def listar_albuns():
@@ -141,7 +141,7 @@ def excluir_album(album_id):
     return resposta # responder!
 
 
-# teste curl localhost:5000/listar_cedulas
+# teste: curl localhost:5000/listar_cedulas
 @jwt_required()
 @app.route("/listar_cedulas")
 def listar_cedulas():

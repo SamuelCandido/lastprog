@@ -98,7 +98,7 @@ def listar_albuns():
     return resposta # retornar...
 
 
-# teste da rota: curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_moeda
+# teste da rota: curl -d '{"nome":"Euro", "ano":"2002"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_album
 
 @app.route("/incluir_album", methods=['POST'])
 @jwt_required()
@@ -122,7 +122,7 @@ def incluir_album():
     return resposta # responder!
 
 
-# teste: curl -X DELETE http://localhost:5000/excluir_moeda/1
+# teste: curl -X DELETE http://localhost:5000/excluir_album/1
 @jwt_required()
 @app.route("/excluir_album/<int:album_id>", methods=['DELETE'])
 def excluir_album(album_id):

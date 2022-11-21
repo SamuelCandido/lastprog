@@ -12,12 +12,15 @@
 - Rota padrão, deve retornar o link do github: [Link do repositorio](https://github.com/SamuelCandido/lastprog)
 
 **/listar_moedas**
+- teste curl localhost:5000/listar_moedas
 - Vai listar as moedas em json
 
 **/listar_cedulas**
+- teste curl localhost:5000/listar_cedulas
 - Vai listar as cedula em json
 
 **/listar_albuns**
+- teste curl localhost:5000/listar_albuns
 - Vai listar os albuns em json
 
 **/incluir_moeda**
@@ -53,12 +56,14 @@
 - Ao excluir, deve retornar: "resultado": "ok", "detalhes": "Album excluido com sucesso"
 
 **/cadastro**
+- curl -X POST localhost:5000/cadastro -d '{"nome":"joao da silva","email":"josilva@gmail.com","senha":"joao123"}' -H 'Content-Type: application/json'
 - Deve incluir pessoa/usuario no banco de dados
 - Em caso de usuario existente deve retornar: "resultado": "erro", "detalhes": "Usuario já existente"
 - Em caso de nome/email Null deve retornar: "resultado":"erro", "detalhes":"Nome de usuario não pode ser vazio"
 - Em caso de qualquer erro não tratado deve retornar: "resultado":"erro", "detalhes":str(e)
 
 **/login**
+- curl -X POST localhost:5000/login -d '{"email":"josilva@gmail.com","senha":"joao123"}' -H 'Content-Type: application/json'
 - Deve ao acessar, com email e senhas corretos, sua galeria
 - O mesmo se encontra no erro por qualquer usuario acessar a mesma galeria
 - Em caso de login correto deve retornar: "resultado":"ok", "detalhes":dict(token=access_token)

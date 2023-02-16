@@ -1,5 +1,9 @@
 # Lastprog
-**Sistema de albuns de moedas/cedulas ("Galeria")**
+**Contribuintes para esta criação:**
+- Alana Andreazza, Prof. Hylson Vescovi, Samuel José Candido Yara Rahn
+
+**Do que se trata:**
+- Se trata de um sistema de albuns de moedas/cedulas ("Galeria"), em tese não é de muita utilidade, toda via serve para testar os conhecimentos e por em pratica tudo visto no 3 ano do Instituto Federal Catarinense 
 
 # TESTES
 
